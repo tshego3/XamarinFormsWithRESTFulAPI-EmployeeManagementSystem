@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IT_CompanyXamarinAPI.Views.AddEmployee" Title="Add Employee">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Padding="15">
+                <Label Text="Fill All Information" FontSize="Small" FontAttributes="Bold"></Label>
+
+                <Entry Placeholder="Firstname" TextColor="Black" x:Name="txtFirstname"></Entry>
+
+                <Entry Placeholder="Surname" TextColor="Black" x:Name="txtSurname"></Entry>
+                
+                <Entry Placeholder="10 Digit Tell No" Keyboard="Numeric" TextColor="Black" x:Name="txtTellNo"></Entry>
+
+                <Entry Placeholder="Email"  Keyboard="Email" TextColor="Black" x:Name="txtEmail"></Entry>
+
+                <Button Text="Add" HorizontalOptions="FillAndExpand" x:Name="BtnAdd" Clicked="BtnAdd_Clicked"></Button>
+
+                <Button Text="Update" HorizontalOptions="FillAndExpand" x:Name="BtnUpdate" Clicked="BtnUpdate_Clicked" ></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

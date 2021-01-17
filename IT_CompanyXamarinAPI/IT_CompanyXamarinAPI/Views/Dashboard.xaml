@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IT_CompanyXamarinAPI.Views.Dashboard" Title="Employee List">
+    <ContentPage.Content>
+        <StackLayout Padding="15">
+
+            <Button Text="Add Employee" HorizontalOptions="FillAndExpand"
+                BackgroundColor="#28a745" TextColor="Black" Clicked="Button_Clicked"></Button>
+
+            <ListView x:Name="EList" HasUnevenRows="True" ItemTapped="EList_ItemTapped"
+                            IsPullToRefreshEnabled="True" Refreshing="EList_Refreshing">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Delete" Clicked="MenuItem_Clicked" IsDestructive="True" CommandParameter="{Binding EmployeeID}"></MenuItem>
+                            </ViewCell.ContextActions>
+
+                            <StackLayout Spacing="2">
+                                <Label x:Name="lblFirstname" TextColor="Black" Text="{Binding Firstname, StringFormat='Firstname: {0:F0}'}" FontSize="Medium" FontAttributes="Bold"></Label>
+                                <Label x:Name="lblSurname" TextColor="Black" Text="{Binding Surname, StringFormat='Surname: {0:F0}'}" FontSize="Small" FontAttributes="None"></Label>
+                                <Label x:Name="lblTellNo" TextColor="Black" Text="{Binding TellNo, StringFormat='Tell No: {0:F0}'}" FontSize="Small" FontAttributes="None"></Label>
+                                <Label x:Name="lblEmail" TextColor="Black" Text="{Binding Email, StringFormat='Email: {0:F0}'}" FontSize="Small" FontAttributes="None"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
